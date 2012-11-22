@@ -1,0 +1,3 @@
+include README.md
+recursive-include bootstrap_themes *.py
+recursive-include bootstrap_themes *.css
