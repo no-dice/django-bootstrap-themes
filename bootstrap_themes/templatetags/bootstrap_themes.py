@@ -1,16 +1,12 @@
 from django import template
-from django.conf import settings
 from django.contrib.staticfiles.storage import staticfiles_storage
+from bootstrap_themes import get_script, get_styles
 
 register = template.Library()
 
 @register.simple_tag
-def bootstrap_script(use_minified=True):
-    minified = ''
-    if use_minified:
-        minified = '.min'
-    script_file = staticfiles_storage.url('bootstrap/js/bootstrap%(minified)s.js' % dict(minified=minified))
-    return '<script type="text/javascript" src="%(script_file)s"></script>' % dict(script_file=script_file)
+def bootstrap_script(use_min=True):
+    return '<script type="text/javascript" src="%(script_file)s"></script>' % dict(script_file=get_script(use_min))
 
 @register.simple_tag
 def bootstrap_styles(theme='default', type='min.css'):
@@ -22,7 +18,4 @@ def bootstrap_styles(theme='default', type='min.css'):
         subdir = type
         fileext = type
         mimetype = 'text/less'
-    if (not theme) or (theme == ''):
-        theme = 'default'
-    theme_file = staticfiles_storage.url('bootstrap/themes/%(theme)s/%(subdir)s/bootstrap.%(fileext)s' % dict(theme=theme))
-    return '<link rel="stylesheet" href="%(theme_file)s" type="%(mimetype)s">' % dict(theme_file=theme_file, mimetype=mimetype)
+    return '<link rel="stylesheet" href="%(theme_file)s" type="%(mimetype)s">' % dict(theme_file=get_styles(theme, subdir, fileext), mimetype=mimetype)
