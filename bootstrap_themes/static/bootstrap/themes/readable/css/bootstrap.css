@@ -306,7 +306,7 @@ body {
   font-size: 17px;
   line-height: 1.428571429;
   color: #333333;
-  background-color: #f6f6f6;
+  background-color: #f9f9f9;
 }
 
 input,
@@ -904,7 +904,7 @@ pre code {
 
 @media (min-width: 768px) {
   .container {
-    max-width: 728px;
+    max-width: 750px;
   }
   .col-sm-1,
   .col-sm-2,
@@ -1058,7 +1058,7 @@ pre code {
 
 @media (min-width: 992px) {
   .container {
-    max-width: 940px;
+    max-width: 970px;
   }
   .col-md-1,
   .col-md-2,
@@ -1427,7 +1427,7 @@ th {
 }
 
 .table .table {
-  background-color: #f6f6f6;
+  background-color: #f9f9f9;
 }
 
 .table-condensed thead > tr > th,
@@ -1927,7 +1927,7 @@ textarea.input-lg {
   padding: 8px 12px;
   margin-bottom: 0;
   font-size: 17px;
-  font-weight: bold;
+  font-weight: normal;
   line-height: 1.428571429;
   text-align: center;
   white-space: nowrap;
@@ -2982,7 +2982,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a:focus {
   color: #555555;
   cursor: default;
-  background-color: #f6f6f6;
+  background-color: #f9f9f9;
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
 }
@@ -3013,7 +3013,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .nav-tabs.nav-justified > .active > a {
-  border-bottom-color: #f6f6f6;
+  border-bottom-color: #f9f9f9;
 }
 
 .nav-pills > li {
@@ -3073,7 +3073,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .nav-tabs-justified > .active > a {
-  border-bottom-color: #f6f6f6;
+  border-bottom-color: #f9f9f9;
 }
 
 .tabbable:before,
@@ -3126,8 +3126,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
   position: relative;
   min-height: 50px;
   margin-bottom: 24px;
-  background-color: #eeeeee;
-  border: 1px solid #dddddd;
+  background-color: #f8f8f8;
+  border: 1px solid #e7e7e7;
 }
 
 .navbar:before,
@@ -3187,7 +3187,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   padding-right: 15px;
   padding-left: 15px;
   overflow-x: visible;
-  border-top: 1px solid #dcdcdc;
+  border-top: 1px solid #e6e6e6;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   -webkit-overflow-scrolling: touch;
 }
@@ -3287,12 +3287,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
   padding: 13px 15px;
   font-size: 22px;
   line-height: 24px;
-  color: #555555;
+  color: #777777;
 }
 
 .navbar-brand:hover,
 .navbar-brand:focus {
-  color: #333333;
+  color: #5e5e5e;
   text-decoration: none;
   background-color: transparent;
 }
@@ -3346,7 +3346,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: 24px;
-  color: #555555;
+  color: #777777;
 }
 
 .navbar-nav > li > a:hover,
@@ -3358,14 +3358,14 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-nav > .active > a,
 .navbar-nav > .active > a:hover,
 .navbar-nav > .active > a:focus {
-  color: #333333;
-  background-color: #d5d5d5;
+  color: #555555;
+  background-color: #e7e7e7;
 }
 
 .navbar-nav > .disabled > a,
 .navbar-nav > .disabled > a:hover,
 .navbar-nav > .disabled > a:focus {
-  color: #333333;
+  color: #cccccc;
   background-color: transparent;
 }
 
@@ -3385,7 +3385,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   }
   .navbar-nav .open .dropdown-menu > li > a {
     line-height: 24px;
-    color: #555555;
+    color: #777777;
   }
   .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-nav .open .dropdown-menu > li > a:focus {
@@ -3396,13 +3396,13 @@ textarea.input-group-sm > .input-group-btn > .btn {
   .navbar-nav .open .dropdown-menu > .active > a,
   .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #333333;
-    background-color: #d5d5d5;
+    color: #555555;
+    background-color: #e7e7e7;
   }
   .navbar-nav .open .dropdown-menu > .disabled > a,
   .navbar-nav .open .dropdown-menu > .disabled > a:hover,
   .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-    color: #333333;
+    color: #cccccc;
     background-color: transparent;
   }
 }
@@ -3440,8 +3440,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
   margin-right: -15px;
   margin-bottom: 4px;
   margin-left: -15px;
-  border-top: 1px solid #dcdcdc;
-  border-bottom: 1px solid #dcdcdc;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
           box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
 }
@@ -3508,20 +3508,20 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-nav > .open > a,
 .navbar-nav > .open > a:hover,
 .navbar-nav > .open > a:focus {
-  color: #333333;
-  background-color: #d5d5d5;
+  color: #555555;
+  background-color: #e7e7e7;
 }
 
 .navbar-nav > .open > a .caret,
 .navbar-nav > .open > a:hover .caret,
 .navbar-nav > .open > a:focus .caret {
-  border-top-color: #333333;
-  border-bottom-color: #333333;
+  border-top-color: #555555;
+  border-bottom-color: #555555;
 }
 
 .navbar-nav > .dropdown > a .caret {
-  border-top-color: #555555;
-  border-bottom-color: #555555;
+  border-top-color: #777777;
+  border-bottom-color: #777777;
 }
 
 .navbar-nav.pull-right > li > .dropdown-menu,
@@ -3539,7 +3539,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   float: left;
   margin-top: 13px;
   margin-bottom: 13px;
-  color: #555555;
+  color: #777777;
 }
 
 @media (min-width: 768px) {
@@ -3550,7 +3550,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-link {
-  color: #555555;
+  color: #777777;
 }
 
 .navbar-link:hover {
@@ -3991,7 +3991,7 @@ a.list-group-item.active > .badge,
   font-weight: 200;
   line-height: 2.1428571435;
   color: inherit;
-  background-color: #eeeeee;
+  background-color: #f1f1f1;
 }
 
 .jumbotron h1 {
@@ -4025,7 +4025,7 @@ a.list-group-item.active > .badge,
 .img-thumbnail {
   padding: 4px;
   line-height: 1.428571429;
-  background-color: #f6f6f6;
+  background-color: #f9f9f9;
   border: 1px solid #dddddd;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -4582,8 +4582,8 @@ a.list-group-item:focus {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  background-color: #eeeeee;
-  border: 1px solid #dddddd;
+  background-color: #f1f1f1;
+  border: 1px solid #e0e0e0;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -5737,7 +5737,11 @@ td.visible-print {
 }
 
 .navbar-nav > li > a {
-  padding-top: 17px;
+  padding-top: 19px;
+}
+
+.navbar-brand {
+  padding-top: 18px;
 }
 
 .btn-default,
