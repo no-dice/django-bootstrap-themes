@@ -1,6 +1,6 @@
 from django import template
 from django.contrib.staticfiles.storage import staticfiles_storage
-from bootstrap_themes import get_script, get_styles
+from .. import get_script, get_styles
 
 register = template.Library()
 

@@ -1,19 +1,19 @@
 from django.contrib.staticfiles.storage import staticfiles_storage
 
-available_themes = [
-    'default',
-    'amelia',
-    'cerulean',
-    'cosmo',
-    'cyborg',
-    'flatly',
-    'journal',
-    'readable',
-    'simplex',
-    'slate',
-    'spacelab',
-    'united',
-]
+available_themes = (
+    ('default', 'Default'),
+    ('amelia', 'Amelia'),
+    ('cerulean', 'Cerulean'),
+    ('cosmo', 'Cosmo'),
+    ('cyborg', 'Cyborg'),
+    ('flatly', 'Flatly'),
+    ('journal', 'Journal'),
+    ('readable', 'Readable'),
+    ('simplex', 'Simplex'),
+    ('slate', 'Slate'),
+    ('spacelab', 'SpaceLab'),
+    ('united', 'United'),
+)
 
 def list_themes():
     return available_themes
