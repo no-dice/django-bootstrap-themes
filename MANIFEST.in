@@ -1,3 +1,5 @@
 include README.md
 recursive-include bootstrap_themes *.py
 recursive-include bootstrap_themes *.css
+recursive-include bootstrap_themes *.less
+recursive-include bootstrap_themes *.js
