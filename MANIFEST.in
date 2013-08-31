@@ -3,3 +3,7 @@ recursive-include bootstrap_themes *.py
 recursive-include bootstrap_themes *.css
 recursive-include bootstrap_themes *.less
 recursive-include bootstrap_themes *.js
+recursive-include bootstrap_themes *.eot
+recursive-include bootstrap_themes *.svg
+recursive-include bootstrap_themes *.ttf
+recursive-include bootstrap_themes *.woff
