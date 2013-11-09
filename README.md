@@ -3,6 +3,9 @@ django-bootstrap-themes
 
 Bootstrap theme support for Django, includes themes from Bootswatch.
 
+  * Bootstrap (http://getbootstrap.com/)
+  * Bootswatch (http://bootswatch.com/)
+
 Installation
 ------------
 
@@ -48,7 +51,7 @@ tags to get the CSS and JS files for Bootstrap:
 ```
 
   * Getting the Javascript files (select minified or not with the
-    use_min parameter)
+    `use_min` parameter)
 
 ```django
 {% bootstrap_script use_min=True %}
@@ -59,8 +62,8 @@ parameters, thus making it easy to switch themes, and even make the
 theme user-configurable.
 
 If you want to make the theme user configurable, there is a handy
-function to return the list of included themes as a choices list for
-a CharField, like this:
+function to return the list of included themes as a `choices` list for
+a `CharField`, like this:
 
 ```python
 from django.db import models
