@@ -1,4 +1,4 @@
-// Journal 3.0.0
+// Journal 3.0.2
 // Bootswatch
 // -----------------------------------------------------
 
@@ -7,28 +7,20 @@
 // Navbar =====================================================================
 
 .navbar {
-	border-bottom: 2px solid @gray-lighter;
 	font-size: 18px;
 	font-family: @font-family-sans-serif;
-	font-weight: bold;
-	color: #000;
+	font-weight: @headings-font-weight;
 }
 
 .navbar-brand {
 	font-size: 18px;
-	font-weight: bold;
+	font-weight: @headings-font-weight;
 	text-transform: uppercase;
 }
 
 // Buttons ====================================================================
 
 // Typography =================================================================
-
-h1, h2, h3, h4, h5, h6 {
-	font-family: @font-family-sans-serif;
-	font-weight: bold;
-	color: #000;
-}
 
 // Tables =====================================================================
 
@@ -72,6 +64,14 @@ h1, h2, h3, h4, h5, h6 {
 
 // Navs =======================================================================
 
+.pagination {
+
+	.active > a,
+	.active > a:hover {
+		border-color: #ddd;
+	}
+}
+
 // Indicators =================================================================
 
 // Progress bars ==============================================================
@@ -82,7 +82,22 @@ h1, h2, h3, h4, h5, h6 {
 
 	h1, h2, h3, h4, h5, h6 {
 		font-family: @font-family-sans-serif;
-		font-weight: bold;
+		font-weight: @headings-font-weight;
 		color: #000;
 	}
+}
+
+.panel {
+
+	&-primary,
+	&-success,
+	&-warning,
+	&-danger,
+	&-info {
+		.panel-title {
+			color: #fff;
+		}
+	}
+
+
 }

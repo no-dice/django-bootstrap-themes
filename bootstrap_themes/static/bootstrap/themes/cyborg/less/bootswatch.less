@@ -1,4 +1,4 @@
-// Cyborg 3.0.0
+// Cyborg 3.0.2
 // Bootswatch
 // -----------------------------------------------------
 
@@ -15,27 +15,28 @@
 
 // Typography =================================================================
 
-h1, h2, h3, h4, h5, h6 {
-	color: #fff;
-}
-
-.text-primary {
+.text-primary,
+.text-primary:hover {
 	color: @brand-primary;
 }
 
-.text-success {
+.text-success,
+.text-success:hover {
 	color: @brand-success;
 }
 
-.text-danger {
+.text-danger,
+.text-danger:hover {
 	color: @brand-danger;
 }
 
-.text-warning {
+.text-warning,
+.text-warning:hover {
 	color: @brand-warning;
 }
 
-.text-info {
+.text-info,
+.text-info:hover {
 	color: @brand-info;
 }
 
@@ -48,6 +49,10 @@ h1, h2, h3, h4, h5, h6 {
 	tr.danger {
 		color: #fff;
 	}
+}
+
+.table-responsive > .table {
+	background-color: @table-bg;
 }
 
 // Forms ======================================================================

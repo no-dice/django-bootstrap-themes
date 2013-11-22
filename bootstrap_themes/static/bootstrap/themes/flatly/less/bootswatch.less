@@ -1,4 +1,4 @@
-// Flatly 3.0.0
+// Flatly 3.0.2
 // Bootswatch
 // -----------------------------------------------------
 
@@ -18,23 +18,28 @@
 
 // Typography =================================================================
 
-.text-primary {
+.text-primary,
+.text-primary:hover {
 	color: @brand-primary;
 }
 
-.text-success {
+.text-success,
+.text-success:hover {
 	color: @brand-success;
 }
 
-.text-danger {
+.text-danger,
+.text-danger:hover {
 	color: @brand-danger;
 }
 
-.text-warning {
+.text-warning,
+.text-warning:hover {
 	color: @brand-warning;
 }
 
-.text-info {
+.text-info,
+.text-info:hover {
 	color: @brand-info;
 }
 
@@ -113,14 +118,19 @@ input[type="color"],
 
 // Navs =======================================================================
 
+.nav {
+	.open > a,
+	.open > a:hover,
+	.open > a:focus {
+		border-color: transparent;
+	}
+}
+
 .pagination {
 	
-	a {
+	a,
+	a:hover {
 		color: #fff;
-
-		&:hover {
-			color: @text-color;
-		}
 	}
 
 	.disabled {
@@ -134,11 +144,9 @@ input[type="color"],
 }
 
 .pager {
-	a {
+	a,
+	a:hover {
 		color: #fff;
-		&:hover {
-			color: @text-color;
-		}
 	}
 
 	.disabled {
