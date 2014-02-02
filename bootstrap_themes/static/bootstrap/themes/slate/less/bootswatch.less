@@ -1,4 +1,4 @@
-// Slate 3.0.2
+// Slate 3.0.3
 // Bootswatch
 // -----------------------------------------------------
 
@@ -58,50 +58,55 @@
 
 .btn-default {
 	.btn-shadow(@btn-default-bg);
+
+	&:hover {
+		.btn-shadow-inverse(@btn-default-bg);
+	}
 }
 
 .btn-primary {
 	.btn-shadow(@btn-primary-bg);
+
+	&:hover {
+		.btn-shadow-inverse(@btn-primary-bg);
+	}
 }
 
 .btn-success {
 	.btn-shadow(@btn-success-bg);
+
+	&:hover {
+		.btn-shadow-inverse(@btn-success-bg);
+	}
 }
 
 .btn-info {
 	.btn-shadow(@btn-info-bg);
+
+	&:hover {
+		.btn-shadow-inverse(@btn-info-bg);
+	}
 }
 
 .btn-warning {
 	.btn-shadow(@btn-warning-bg);
+
+	&:hover {
+		.btn-shadow-inverse(@btn-warning-bg);
+	}
 }
 
 .btn-danger {
 	.btn-shadow(@btn-danger-bg);
+
+	&:hover {
+		.btn-shadow-inverse(@btn-danger-bg);
+	}
 }
 
-.btn-default:hover {
-	.btn-shadow-inverse(@btn-default-bg);
-}
-
-.btn-primary:hover {
-	.btn-shadow-inverse(@btn-primary-bg);
-}
-
-.btn-success:hover {
-	.btn-shadow-inverse(@btn-success-bg);
-}
-
-.btn-info:hover {
-	.btn-shadow-inverse(@btn-info-bg);
-}
-
-.btn-warning:hover {
-	.btn-shadow-inverse(@btn-warning-bg);
-}
-
-.btn-danger:hover {
-	.btn-shadow-inverse(@btn-danger-bg);
+.btn-link,
+.btn-link:hover {
+	border-color: transparent;
 }
 
 // Typography =================================================================
@@ -209,6 +214,7 @@ legend {
 	border-color: rgba(0, 0, 0, 0.6);
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 	.btn-shadow(@btn-default-bg);
+	color: @btn-default-color;
 }
 
 // Navs =======================================================================
