@@ -13,6 +13,8 @@ available_themes = (
     ('slate', 'Slate'),
     ('spacelab', 'SpaceLab'),
     ('united', 'United'),
+    ('superhero', 'Superhero'),
+    ('lumen', 'Lumen'),
 )
 
 def list_themes():
