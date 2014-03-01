@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Django-bootstrap-themes by no-dice</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Django-bootstrap-themes</h1>
+        <p class="header">Support for multiple Bootstrap themes in Django</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/no-dice/django-bootstrap-themes/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/no-dice/django-bootstrap-themes/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/no-dice/django-bootstrap-themes">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/no-dice">no-dice</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a name="django-bootstrap-themes" class="anchor" href="#django-bootstrap-themes"><span class="octicon octicon-link"></span></a>django-bootstrap-themes</h1>
+
+<p>Bootstrap theme support for Django, includes themes from Bootswatch.</p>
+
+<ul>
+<li>Bootstrap (<a href="http://getbootstrap.com/">http://getbootstrap.com/</a>)</li>
+<li>Bootswatch (<a href="http://bootswatch.com/">http://bootswatch.com/</a>)</li>
+</ul><h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>django-bootstrap-themes can be installed via pip:</p>
+
+<pre lang="shell"><code>pip install django-bootstrap-themes
+</code></pre>
+
+<p>or by copying the <code>bootstrap_themes</code> directory into your Django project.</p>
+
+<h2>
+<a name="configuration" class="anchor" href="#configuration"><span class="octicon octicon-link"></span></a>Configuration</h2>
+
+<p>To configure django-bootstrap-themes in your project, first add it to
+the installed apps in your Django settings:</p>
+
+<div class="highlight highlight-python"><pre><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="c"># Django apps</span>
+    <span class="s">'bootstrap_themes'</span><span class="p">,</span>
+    <span class="c"># Other apps</span>
+<span class="p">)</span>
+</pre></div>
+
+<p>Once you've added it to your installed apps, you can use the template
+tags to get the CSS and JS files for Bootstrap:</p>
+
+<ul>
+<li>Loading the templatetags</li>
+</ul><div class="highlight highlight-django"><pre><span class="cp">{%</span> <span class="k">load</span> <span class="nv">bootstrap_themes</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+
+<ul>
+<li>Getting the CSS files (use the <code>theme</code> parameter to select the theme
+and the <code>type</code> parameter to choose between CSS, minified CSS, or LESS
+format for the stylesheets)</li>
+</ul><div class="highlight highlight-django"><pre><span class="cp">{%</span> <span class="k">bootstrap_styles</span> <span class="nv">theme</span><span class="o">=</span><span class="s1">'default'</span> <span class="nv">type</span><span class="o">=</span><span class="s1">'min.css'</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">bootstrap_styles</span> <span class="nv">theme</span><span class="o">=</span><span class="s1">'cosmo'</span> <span class="nv">type</span><span class="o">=</span><span class="s1">'css'</span> <span class="cp">%}</span><span class="x"></span>
+<span class="cp">{%</span> <span class="k">bootstrap_styles</span> <span class="nv">theme</span><span class="o">=</span><span class="s1">'united'</span> <span class="nv">type</span><span class="o">=</span><span class="s1">'less'</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+
+<ul>
+<li>Getting the Javascript files (select minified or not with the
+<code>use_min</code> parameter)</li>
+</ul><div class="highlight highlight-django"><pre><span class="cp">{%</span> <span class="k">bootstrap_script</span> <span class="nv">use_min</span><span class="o">=</span><span class="kp">True</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+
+<p>As with any Django templatetags, you can use variables for the
+parameters, thus making it easy to switch themes, and even make the
+theme user-configurable.</p>
+
+<p>If you want to make the theme user configurable, there is a handy
+function to return the list of included themes as a <code>choices</code> list for
+a <code>CharField</code>, like this:</p>
+
+<div class="highlight highlight-python"><pre><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">bootstrap_themes</span> <span class="kn">import</span> <span class="n">list_themes</span>
+
+<span class="k">class</span> <span class="nc">MyModel</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">theme</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s">'default'</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">list_themes</span><span class="p">())</span>
+</pre></div>
+
+<p>Then in your templates, you can use the value of the <code>theme</code> field as the
+theme parameter to <code>bootstrap_styles</code>.</p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
