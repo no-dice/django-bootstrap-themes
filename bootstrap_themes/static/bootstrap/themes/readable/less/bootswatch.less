@@ -1,4 +1,4 @@
-// Readable 3.1.0
+// Readable 3.1.1
 // Bootswatch
 // -----------------------------------------------------
 
@@ -104,6 +104,18 @@ legend {
     color: @alert-success-text;
     text-decoration: underline;
   }
+
+  .close {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.4;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      opacity: 1;
+    }
+  }
 }
 
 .label {
@@ -118,6 +130,8 @@ legend {
 }
 
 .badge {
+  padding: 1px 7px 5px;
+  vertical-align: 2px;
   font-family: @headings-font-family;
   font-weight: normal;
 }
