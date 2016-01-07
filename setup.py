@@ -2,7 +2,7 @@
 
 from setuptools import setup, find_packages
 
-version = '3.1.2'
+version = '3.1.3'
 
 setup(
     name='django-bootstrap-themes',
