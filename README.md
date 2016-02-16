@@ -70,7 +70,7 @@ from django.db import models
 from bootstrap_themes import list_themes
 
 class MyModel(models.Model):
-    theme = models.CharField(default='default', choices=list_themes())
+    theme = models.CharField(max_length=255, default='default', choices=list_themes())
 ```
 
 Then in your templates, you can use the value of the `theme` field as the
