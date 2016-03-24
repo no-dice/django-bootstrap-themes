@@ -1,8 +1,13 @@
-// Darkly 3.1.1
+// Darkly 3.3.5
 // Bootswatch
 // -----------------------------------------------------
 
-@import url("//fonts.googleapis.com/css?family=Lato:400,700,400italic");
+@web-font-path: "https://fonts.googleapis.com/css?family=Lato:400,700,400italic";
+
+.web-font(@path) {
+  @import url("@{path}");
+}
+.web-font(@web-font-path);
 
 // Navbar =====================================================================
 
@@ -26,7 +31,7 @@
   }
 
   &-brand {
-    padding: 18.5px 15px 20.5px;
+    line-height: 1;
   }
 
   &-form {
@@ -41,6 +46,10 @@
 }
 
 // Buttons ====================================================================
+
+.btn {
+  border-width: 2px;
+}
 
 .btn:active {
   .box-shadow(none);
@@ -82,8 +91,12 @@
 table,
 .table {
 
-  a {
+  a:not(.btn) {
     text-decoration: underline;
+  }
+
+  .dropdown-menu a {
+    text-decoration: none;
   }
 
   .success,
@@ -92,7 +105,9 @@ table,
   .info {
     color: #fff;
 
-    a {
+    > th > a,
+    > td > a,
+    > a {
       color: #fff;
     }
   }
@@ -126,7 +141,7 @@ textarea {
 .form-control,
 input,
 textarea {
-  border: none;
+  border: 2px hidden transparent;
   .box-shadow(none);
 
   &:focus {
@@ -141,6 +156,10 @@ textarea {
   .checkbox,
   .radio-inline,
   .checkbox-inline,
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label,
   .form-control-feedback {
     color: @brand-warning;
   }
@@ -162,6 +181,10 @@ textarea {
   .checkbox,
   .radio-inline,
   .checkbox-inline,
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label,
   .form-control-feedback {
     color: @brand-danger;
   }
@@ -183,6 +206,10 @@ textarea {
   .checkbox,
   .radio-inline,
   .checkbox-inline,
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label,
   .form-control-feedback {
     color: @brand-success;
   }
@@ -232,11 +259,24 @@ textarea {
   }
 }
 
+.breadcrumb a {
+  color: #fff;
+}
+
 // Indicators =================================================================
 
-.alert {
+.close {
+  text-decoration: none;
+  text-shadow: none;
+  opacity: 0.4;
 
-  a,
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}
+
+.alert {
   .alert-link {
     color: #fff;
     text-decoration: underline;
@@ -260,28 +300,52 @@ textarea {
   .box-shadow(none);
 }
 
-.popover,
-.modal {
-  color: @gray-dark;
-}
+a.list-group-item {
 
-.breadcrumb a {
-  color: #fff;
-}
+  &.active,
+  &.active:hover,
+  &.active:focus {
+    border-color: @list-group-border;
+  }
 
-.panel-default > .panel-heading {
-  background-color: @panel-footer-bg;
-}
+  &-success {
+    &.active {
+      background-color: @state-success-bg;
+    }
 
-.modal {
-  color: @text-color;
+    &.active:hover,
+    &.active:focus {
+      background-color: darken(@state-success-bg, 5%);
+    }
+  }
 
-  &-header,
-  &-footer {
-    border-color: @gray;
+  &-warning {
+    &.active {
+      background-color: @state-warning-bg;
+    }
+    
+    &.active:hover,
+    &.active:focus {
+      background-color: darken(@state-warning-bg, 5%);
+    }
+  }
+
+  &-danger {
+    &.active {
+      background-color: @state-danger-bg;
+    }
+    
+    &.active:hover,
+    &.active:focus {
+      background-color: darken(@state-danger-bg, 5%);
+    }
   }
 }
 
 .popover {
   color: @text-color;
+}
+
+.panel-default > .panel-heading {
+  background-color: @panel-footer-bg;
 }

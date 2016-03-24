@@ -1,8 +1,13 @@
-// Cosmo 3.1.1
+// Cosmo 3.3.5
 // Bootswatch
 // -----------------------------------------------------
 
-@import url("//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700");
+@web-font-path: "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700";
+
+.web-font(@path) {
+  @import url("@{path}");
+}
+.web-font(@web-font-path);
 
 // Navbar =====================================================================
 
@@ -19,11 +24,11 @@
 
 // Buttons ====================================================================
 
-.btn-lg {
-  padding-top: 19px;
-}
-
 // Typography =================================================================
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
 
 .text-primary,
 .text-primary:hover {
@@ -55,8 +60,12 @@
 table,
 .table {
 
-  a {
+  a:not(.btn) {
     text-decoration: underline;
+  }
+
+  .dropdown-menu a {
+    text-decoration: none;
   }
 
   .success,
@@ -77,12 +86,21 @@ table,
 .has-warning {
   .help-block,
   .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline,
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label,
   .form-control-feedback {
     color: @brand-warning;
   }
 
   .form-control,
-  .form-control:focus {
+  .form-control:focus,
+  .input-group-addon {
     border: 1px solid @brand-warning;
   }
 }
@@ -90,12 +108,21 @@ table,
 .has-error {
   .help-block,
   .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline,
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label,
   .form-control-feedback {
     color: @brand-danger;
   }
 
   .form-control,
-  .form-control:focus {
+  .form-control:focus,
+  .input-group-addon {
     border: 1px solid @brand-danger;
   }
 }
@@ -103,12 +130,21 @@ table,
 .has-success {
   .help-block,
   .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline,
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label,
   .form-control-feedback {
     color: @brand-success;
   }
 
   .form-control,
-  .form-control:focus {
+  .form-control:focus,
+  .input-group-addon {
     border: 1px solid @brand-success;
   }
 }
@@ -132,24 +168,23 @@ table,
 
 // Indicators =================================================================
 
+.close {
+  text-decoration: none;
+  text-shadow: none;
+  opacity: 0.4;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}
+
 .alert {
   border: none;
 
   .alert-link {
     text-decoration: underline;
     color: #fff;
-  }
-
-  .close {
-    color: #fff;
-    text-decoration: none;
-    opacity: 0.4;
-
-    &:hover,
-    &:focus {
-      color: #fff;
-      opacity: 1;
-    }
   }
 }
 
@@ -176,4 +211,56 @@ table,
     border-top-right-radius: 0;
     border-top-left-radius: 0;
   }
+
+  &-default {
+    .close {
+      color: @text-color;
+    }
+  }
+}
+
+a.list-group-item {
+
+  &-success {
+    &.active {
+      background-color: @state-success-bg;
+    }
+
+    &.active:hover,
+    &.active:focus {
+      background-color: darken(@state-success-bg, 5%);
+    }
+  }
+
+  &-warning {
+    &.active {
+      background-color: @state-warning-bg;
+    }
+    
+    &.active:hover,
+    &.active:focus {
+      background-color: darken(@state-warning-bg, 5%);
+    }
+  }
+
+  &-danger {
+    &.active {
+      background-color: @state-danger-bg;
+    }
+    
+    &.active:hover,
+    &.active:focus {
+      background-color: darken(@state-danger-bg, 5%);
+    }
+  }
+}
+
+.modal {
+  .close {
+    color: @text-color;
+  }
+}
+
+.popover {
+  color: @text-color;
 }

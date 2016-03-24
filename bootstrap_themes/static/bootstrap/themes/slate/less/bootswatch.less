@@ -1,4 +1,4 @@
-// Slate 3.1.1
+// Slate 3.3.5
 // Bootswatch
 // -----------------------------------------------------
 
@@ -8,7 +8,7 @@
 }
 
 .btn-shadow-inverse(@color) {
-  #gradient > .vertical-three-colors(darken(@color, 24%), darken(@color, 18%), 40%, darken(@color, 14%));
+  #gradient > .vertical-three-colors(darken(@color, 24%), darken(@color, 18%), 40%, darken(@color, 16%));
   filter: none;
 }
 
@@ -20,21 +20,28 @@
   border: 1px solid rgba(0, 0, 0, 0.6);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 
-  &-inverse {
-    .btn-shadow(@navbar-inverse-bg);
-
-    .badge {
-      background-color: @navbar-inverse-link-active-bg;
-    }
-  }
-
-  &-nav > li > a {
+  .navbar-nav > li > a {
     border-right: 1px solid rgba(0, 0, 0, 0.2);
     border-left: 1px solid rgba(255, 255, 255, 0.1);
 
     &:hover {
       .btn-shadow-inverse(@navbar-default-bg);
       border-left-color: transparent;
+    }
+  }
+
+  &-inverse {
+    .btn-shadow(@navbar-inverse-bg);
+
+    .badge {
+      background-color: @navbar-inverse-link-active-bg;
+    }
+
+    .navbar-nav > li > a {
+
+      &:hover {
+        .btn-shadow-inverse(@navbar-inverse-bg);
+      }
     }
   }
 
@@ -148,10 +155,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .table {
 
-  a {
-    text-decoration: underline;
-  }
-
   .success,
   .warning,
   .danger,
@@ -187,6 +190,14 @@ textarea {
 .has-warning {
   .help-block,
   .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline,
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label,
   .form-control-feedback {
     color: @brand-warning;
   }
@@ -195,11 +206,24 @@ textarea {
   .form-control:focus {
     border-color: @brand-warning;
   }
+
+  .input-group-addon {
+    background-color: @body-bg;
+    border: none;
+  }
 }
 
 .has-error {
   .help-block,
   .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline,
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label,
   .form-control-feedback {
     color: @brand-danger;
   }
@@ -208,11 +232,24 @@ textarea {
   .form-control:focus {
     border-color: @brand-danger;
   }
+
+  .input-group-addon {
+    background-color: @body-bg;
+    border: none;
+  }
 }
 
 .has-success {
   .help-block,
   .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline,
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label,
   .form-control-feedback {
     color: @brand-success;
   }
@@ -220,6 +257,11 @@ textarea {
   .form-control,
   .form-control:focus {
     border-color: @brand-success;
+  }
+
+  .input-group-addon {
+    background-color: @body-bg;
+    border: none;
   }
 }
 
@@ -274,7 +316,8 @@ legend {
 
 .pagination {
 
-  & > li > a {
+  & > li > a,
+  & > li > span {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
     .btn-shadow(@btn-default-bg);
 
@@ -283,12 +326,15 @@ legend {
     }
   }
 
-  & > li.active > a {
+  & > li.active > a,
+  & > li.active > span {
     .btn-shadow-inverse(@btn-default-bg);
   }
 
   & > li.disabled > a,
-  & > li.disabled > a:hover {
+  & > li.disabled > a:hover,
+  & > li.disabled > span,
+  & > li.disabled > span:hover {
     background-color: transparent;
     .btn-shadow(@btn-default-bg);
   }
@@ -337,6 +383,54 @@ legend {
 // Progress bars ==============================================================
 
 // Containers =================================================================
+
+a.thumbnail:hover,
+a.thumbnail:focus,
+a.thumbnail.active {
+  border-color: @thumbnail-border;
+}
+
+a.list-group-item {
+
+  &.active,
+  &.active:hover,
+  &.active:focus {
+    border-color: @list-group-border;
+  }
+
+  &-success {
+    &.active {
+      background-color: @state-success-bg;
+    }
+
+    &.active:hover,
+    &.active:focus {
+      background-color: darken(@state-success-bg, 5%);
+    }
+  }
+
+  &-warning {
+    &.active {
+      background-color: @state-warning-bg;
+    }
+    
+    &.active:hover,
+    &.active:focus {
+      background-color: darken(@state-warning-bg, 5%);
+    }
+  }
+
+  &-danger {
+    &.active {
+      background-color: @state-danger-bg;
+    }
+    
+    &.active:hover,
+    &.active:focus {
+      background-color: darken(@state-danger-bg, 5%);
+    }
+  }
+}
 
 .jumbotron {
   border: 1px solid rgba(0, 0, 0, 0.6);
