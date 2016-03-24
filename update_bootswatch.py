@@ -4,9 +4,12 @@ import os
 import json
 import urllib2
 
-user_agent = 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'
+user_agent = 'Mozilla/5.0 (compatible)'
 
-theme_api = urllib2.urlopen('http://api.bootswatch.com/3/')
+opener = urllib2.build_opener()
+opener.addheaders = [('User-agent', user_agent)]
+
+theme_api = opener.open('http://bootswatch.com/api/3.json')
 data = json.load(theme_api)
 for theme in data['themes']:
     less_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'bootstrap_themes', 'static', 'bootstrap', 'themes', theme['name'].lower(), 'less'))
@@ -14,8 +17,7 @@ for theme in data['themes']:
         os.makedirs(less_path)
     if os.access(less_path, os.W_OK):
         try:
-            request = urllib2.Request(theme['less'], None, { 'User-Agent' : user_agent })
-            theme_less = urllib2.urlopen(request)
+            theme_less = opener.open(theme['less'])
         except urllib2.URLError as error:
             print "Opening URL " + theme['less'] + " failed!"
             print "Error: " + error.reason
@@ -29,8 +31,7 @@ for theme in data['themes']:
             print "Writing to file " + os.path.join(less_path, 'bootswatch.less') + " failed!"
 
         try:
-            request = urllib2.Request(theme['lessVariables'], None, { 'User-Agent' : user_agent })
-            theme_less = urllib2.urlopen(request)
+            theme_less = opener.open(theme['lessVariables'])
         except urllib2.URLError as error:
             print "Opening URL " + theme['lessVariables'] + " failed!"
             print "Error: " + error.reason
